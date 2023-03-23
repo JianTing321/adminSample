@@ -15,14 +15,14 @@ const toolBar = Vue.extend({
         </svg> -->         
         <v-icon class="h-0.5" size="10%">mdi-menu</v-icon>         
     </div>
-    <div class="toolList pl-0 p-0.5">
+    <div class="toolList p-0.5 ">
       <v-menu left :offset-x="offset" :close-on-content-click="false" v-model="menu" transition="slide-x-transition">
           <template v-slot:activator="{ on, attrs }">
               <div>
                   <v-btn icon v-for="(item , index) in toolItem" class="flex" :key="index" v-on="on" v-bind="attrs"
                       v-on:click="conditionSet(item)">
-                      <v-icon size="120%"
-                          class="p-3.5 m-0.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer"
+                      <v-icon size="130%"
+                          class="p-3.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer"
                           color="white" :title="item.title">{{item.icon}}</v-icon>
                   </v-btn>
               </div>
@@ -44,25 +44,7 @@ const toolBar = Vue.extend({
                   </v-list-item>
               </v-list>
               <v-divider></v-divider>
-              <v-card-text>
-                  <div>
-                      依繪製圖形查詢資訊
-                  </div>
-                  <v-chip-group v-model="initFilterSet" column multiple>
-                      <v-chip filter outlined>
-                          點
-                      </v-chip>
-                      <v-chip filter outlined>
-                          線
-                      </v-chip>
-                      <v-chip filter outlined>
-                          面
-                      </v-chip>
-                      <v-chip filter outlined>
-                          矩形
-                      </v-chip>
-                  </v-chip-group>
-              </v-card-text>
+         
 
               </v-list>
               <v-card-actions>
@@ -82,7 +64,6 @@ const toolBar = Vue.extend({
   data() {
     return {
       <!-- dialog: false, -->
-      initFilterSet: [0],
       menu: false,
       toolIndexFocus: 0,
       toolTitleFocus: "",

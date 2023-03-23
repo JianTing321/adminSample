@@ -1,12 +1,18 @@
 const asideBar = Vue.extend({
-    name:'asideBar',
-    components:{
-    },
-    template:`    
+  name: "asideBar",
+  components: {},
+  template: `    
     <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-auto h-screen" aria-label="Sidebar">
         <div class="flex h-full overflow-y-auto" style="box-shadow:.1rem 0 0.05rem rgba(10, 34, 52, .2)">
         <ul class="pl-0 space-y-2" style="background-color: #0a2234">
             <li>
+                <button class="flex flex-col items-center p-2 text-base font-normal text-white dark:text-white hover:bg-gray-500 dark:hover:bg-gray-700">             
+                    <v-icon class="w-8 h-8 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white" color="white">mdi-clipboard-list</v-icon>   
+                    <span class="text-xs text-white">搜尋結果</span>              
+                </button>
+
+
+
                 <a href=" #"
                     class="flex flex-col items-center p-2 text-base font-normal text-white dark:text-white hover:bg-gray-500 dark:hover:bg-gray-700">
                     <svg aria-hidden="true"
@@ -107,22 +113,20 @@ const asideBar = Vue.extend({
         </div>
     </aside>    
     `,
-    data () {
-        return {
-          drawer: true,
-          items: [
-            { title: 'Home', icon: 'mdi-home-city' },
-            { title: 'My Account', icon: 'mdi-account' },
-            { title: 'Users', icon: 'mdi-account-group-outline' },
-            { title: 'Users', icon: 'mdi-account-group-outline' },
-            { title: 'Users', icon: 'mdi-account-group-outline' },
-            { title: 'Users', icon: 'mdi-account-group-outline' },
-            { title: 'Users', icon: 'mdi-account-group-outline' },
-            { title: 'Users', icon: 'mdi-account-group-outline' },
-          ],
-          mini: true,
-        }
-    },
-})
-
-
+  data() {
+    return {
+      drawer: true,
+      items: [
+        { title: "Home", icon: "mdi-home-city" },
+        { title: "My Account", icon: "mdi-account" },
+        { title: "Users", icon: "mdi-account-group-outline" },
+        { title: "Users", icon: "mdi-account-group-outline" },
+        { title: "Users", icon: "mdi-account-group-outline" },
+        { title: "Users", icon: "mdi-account-group-outline" },
+        { title: "Users", icon: "mdi-account-group-outline" },
+        { title: "Users", icon: "mdi-account-group-outline" },
+      ],
+      mini: true,
+    };
+  },
+});
