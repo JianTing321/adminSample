@@ -1,236 +1,63 @@
-<div class="inline-block rounded-lg bg-gray-900 shadow-lg absolute top-4 right-2 z-20">
-    <div
-        class="shadow-sm flex justify-center items-center py-1 bg-white rounded-t-md rounded-b-sm bg-gradient-to-r from-gray-200 via-white to-gray-200 cursor-move">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.193 7" class="h-1.5">
-            <path id="Line_1" data-name="Line 1"
-                d="M8.193,1.5H0A1.5,1.5,0,0,1-1.5,0,1.5,1.5,0,0,1,0-1.5H8.193A1.5,1.5,0,0,1,9.693,0,1.5,1.5,0,0,1,8.193,1.5Z"
-                transform="translate(1.5 1.5)" />
-            <path id="Line_2" data-name="Line 2"
-                d="M8.193,1.5H0A1.5,1.5,0,0,1-1.5,0,1.5,1.5,0,0,1,0-1.5H8.193A1.5,1.5,0,0,1,9.693,0,1.5,1.5,0,0,1,8.193,1.5Z"
-                transform="translate(1.5 5.5)" />
-        </svg>
-    </div>
-    <ul class="toolList pl-0 p-0.5">
-        <v-dialog v-model="dialog" width="500">
-            <template v-slot:activator="{ on, attrs }">
-                <btn color="lighten-2" dark v-bind="attrs" v-on="on">
-                    <li
-                        class="w-10 p-3 m-0.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer ">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="fill-white">
-                            <path
-                                d="M11.644 1.59a.75.75 0 01.712 0l9.75 5.25a.75.75 0 010 1.32l-9.75 5.25a.75.75 0 01-.712 0l-9.75-5.25a.75.75 0 010-1.32l9.75-5.25z" />
-                            <path
-                                d="M3.265 10.602l7.668 4.129a2.25 2.25 0 002.134 0l7.668-4.13 1.37.739a.75.75 0 010 1.32l-9.75 5.25a.75.75 0 01-.71 0l-9.75-5.25a.75.75 0 010-1.32l1.37-.738z" />
-                            <path
-                                d="M10.933 19.231l-7.668-4.13-1.37.739a.75.75 0 000 1.32l9.75 5.25c.221.12.489.12.71 0l9.75-5.25a.75.75 0 000-1.32l-1.37-.738-7.668 4.13a2.25 2.25 0 01-2.134-.001z" />
-                        </svg>
-                    </li>
-                </btn>
-
-                <btn>
-                    <li
-                        class="w-10 p-3 m-0.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 16 16">
-                            <path fill="currentColor"
-                                d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254L1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"
-                                class="fill-white" />
-                        </svg>
-                    </li>
-                </btn>
-                <btn>
-                    <li
-                        class="w-10 p-3 m-0.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="fill-white">
-                            <path fill-rule="evenodd"
-                                d="M7.875 1.5C6.839 1.5 6 2.34 6 3.375v2.99c-.426.053-.851.11-1.274.174-1.454.218-2.476 1.483-2.476 2.917v6.294a3 3 0 003 3h.27l-.155 1.705A1.875 1.875 0 007.232 22.5h9.536a1.875 1.875 0 001.867-2.045l-.155-1.705h.27a3 3 0 003-3V9.456c0-1.434-1.022-2.7-2.476-2.917A48.716 48.716 0 0018 6.366V3.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM16.5 6.205v-2.83A.375.375 0 0016.125 3h-8.25a.375.375 0 00-.375.375v2.83a49.353 49.353 0 019 0zm-.217 8.265c.178.018.317.16.333.337l.526 5.784a.375.375 0 01-.374.409H7.232a.375.375 0 01-.374-.409l.526-5.784a.373.373 0 01.333-.337 41.741 41.741 0 018.566 0zm.967-3.97a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H18a.75.75 0 01-.75-.75V10.5zM15 9.75a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V10.5a.75.75 0 00-.75-.75H15z"
-                                clip-rule="evenodd" />
-                        </svg>
-
-                    </li>
-                </btn>
-                <btn>
-                    <li
-                        class="w-10 p-2 m-0.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 512 512">
-                            <path class="fill-white"
-                                d="M192 96v64h248c4.4 0 8 3.6 8 8v240c0 4.4-3.6 8-8 8H136c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h248V224H192v64L64 192l128-96z"
-                                fill="currentColor" />
-                        </svg>
-                    </li>
-                </btn>
-                <li
-                    class="w-10 p-2 m-0.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 100 100">
-                        <path class="fill-white" id="gisCompassNeedle0" fill="currentColor" fill-opacity="1"
-                            fill-rule="nonzero" stroke="none" stroke-dasharray="none" stroke-dashoffset="20"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-opacity="1"
-                            stroke-width="5.032"
-                            d="M50.03 5a2.516 2.516 0 0 0-2.43 1.76L34.493 48.548a2.51 2.51 0 0 0-.372 1.454c-.026.51.104 1.017.372 1.452l13.105 41.782c.737 2.352 4.065 2.352 4.802 0l13.105-41.785c.27-.436.399-.945.372-1.456a2.513 2.513 0 0 0-.372-1.45L52.401 6.76A2.513 2.513 0 0 0 50.03 5ZM39.403 50.288h6.205c.152 2.306 2.048 4.134 4.392 4.134c2.344 0 4.24-1.828 4.392-4.134h6.461L50 84.078Z"
-                            color="currentColor" color-interpolation="sRGB" color-rendering="auto" display="inline"
-                            vector-effect="none" visibility="visible" />
-                    </svg>
-                </li>
-                <btn>
-                    <li
-                        class="w-10 p-2 m-0.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 24 24">
-                            <path fill="currentColor"
-                                d="M12 4a1 1 0 0 0-1 1v6H5a1 1 0 1 0 0 2h6v6a1 1 0 1 0 2 0v-6h6a1 1 0 1 0 0-2h-6V5a1 1 0 0 0-1-1Z"
-                                class="fill-white" />
-                        </svg>
-                    </li>
-                </btn>
-                <btn>
-                    <li
-                        class="w-10 p-2 m-0.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M4 12a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Z"
-                                class="fill-white" />
-                        </svg>
-                    </li>
-                </btn>
-                <btn>
-                    <li
-                        class="w-10 p-3 m-0.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 11 11">
-                            <path
-                                d="M5.599.94c-.6 0-1.1.5-1.1 1.1s.5 1.1 1.1 1.1s1.1-.5 1.1-1.1s-.5-1.1-1.1-1.1zM3 4l-.001.74S4.5 4.634 4.5 6v1.5c0 1.5-1.501 1.74-1.501 1.74L3 10h5.2l-.001-.76s-1.2 0-1.2-1.5L7 5s0-1-1-1H3z"
-                                fill="currentColor" class="fill-white" />
-                        </svg>
-                    </li>
-                </btn>
-                <btn>
-                    <li
-                        class="w-10 p-3 m-0.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 256 256">
-                            <path fill="currentColor" class="fill-white" d=" M235.32 96L96 235.31a16 16 0 0 1-22.63 0l-52.69-52.68a16 16 0 0 1 0-22.63l29.17-29.17a4 4 0 0
-1 5.66 0l34.83 34.83a8 8 0 0 0 11.71-.43a8.18 8.18 0 0 0-.6-11.09l-34.63-34.63a4 4 0 0 1
-0-5.65l15-15a4 4 0 0 1 5.66 0l34.83 34.83a8 8 0 0 0 11.71-.43a8.18 8.18 0 0 0-.6-11.09L98.83
-87.51a4 4 0 0 1 0-5.65l15-15a4 4 0 0 1 5.65 0l34.83 34.83a8 8 0 0 0 11.72-.43a8.18 8.18 0 0
-0-.61-11.09l-34.59-34.66a4 4 0 0 1 0-5.65L160 20.69a16 16 0 0 1 22.63 0l52.69 52.68a16 16 0 0 1 022.63Z" />
-                        </svg>
-                    </li>
-                </btn>
-                <btn color="lighten-2" dark v-bind="attrs" v-on="on">
-                    <li
-                        class="w-10 p-3 m-0.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 11 11">
-                            <path
-                                d="M5.599.94c-.6 0-1.1.5-1.1 1.1s.5 1.1 1.1 1.1s1.1-.5 1.1-1.1s-.5-1.1-1.1-1.1zM3 4l-.001.74S4.5 4.634 4.5 6v1.5c0 1.5-1.501 1.74-1.501 1.74L3 10h5.2l-.001-.76s-1.2 0-1.2-1.5L7 5s0-1-1-1H3z"
-                                fill="currentColor" class="fill-white" />
-                        </svg>
-                    </li>
-                </btn>
-            </template>
-            <v-card>
-                <v-card-title class="text-h5 grey lighten-2">
-                    Privacy Policy
-                </v-card-title>
-                <v-card-text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-                </v-card-text>
-                <v-divider></v-divider>
-                <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="primary" text @click="dialog = false">
-                        I accept
-                    </v-btn>
-                </v-card-actions>
-            </v-card>
-        </v-dialog>
-
-
-
-
-        <div id="app">
-            <v-app id="inspire">
-                <v-data-table :headers="headers" :items="desserts" sort-by="calories" class="elevation-1">
-                    <template v-slot:top>
-                        <v-toolbar flat>
-                            <v-toolbar-title>My CRUD</v-toolbar-title>
-                            <v-divider class="mx-4" inset vertical></v-divider>
-                            <v-spacer></v-spacer>
-                            <v-dialog v-model="dialog" max-width="500px">
-                                <template v-slot:activator="{ on, attrs }">
-                                    <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
-                                        New Item
-                                    </v-btn>
-                                </template>
-                                <v-card>
-                                    <v-card-title>
-                                        <span class="text-h5">{{ formTitle }}</span>
-                                    </v-card-title>
-                                    <v-card-text>
-                                        <v-container>
-                                            <v-row>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field v-model="editedItem.name"
-                                                        label="Dessert name"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field v-model="editedItem.calories"
-                                                        label="Calories"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field v-model="editedItem.fat"
-                                                        label="Fat (g)"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field v-model="editedItem.carbs"
-                                                        label="Carbs (g)"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field v-model="editedItem.protein"
-                                                        label="Protein (g)"></v-text-field>
-                                                </v-col>
-                                            </v-row>
-                                        </v-container>
-                                    </v-card-text>
-
-                                    <v-card-actions>
-                                        <v-spacer></v-spacer>
-                                        <v-btn color="blue darken-1" text @click="close">
-                                            Cancel
-                                        </v-btn>
-                                        <v-btn color="blue darken-1" text @click="save">
-                                            Save
-                                        </v-btn>
-                                    </v-card-actions>
-                                </v-card>
-                            </v-dialog>
-                            <v-dialog v-model="dialogDelete" max-width="500px">
-                                <v-card>
-                                    <v-card-title class="text-h5">Are you sure you want to delete this
-                                        item?</v-card-title>
-                                    <v-card-actions>
-                                        <v-spacer></v-spacer>
-                                        <v-btn color="blue darken-1" text @click="closeDelete">Cancel</v-btn>
-                                        <v-btn color="blue darken-1" text @click="deleteItemConfirm">OK</v-btn>
-                                        <v-spacer></v-spacer>
-                                    </v-card-actions>
-                                </v-card>
-                            </v-dialog>
-                        </v-toolbar>
-                    </template>
-                    <template v-slot:item.actions="{ item }">
-                        <v-icon small class="mr-2" @click="editItem(item)">
-                            mdi-pencil
-                        </v-icon>
-                        <v-icon small @click="deleteItem(item)">
-                            mdi-delete
-                        </v-icon>
-                    </template>
-                    <template v-slot:no-data>
-                        <v-btn color="primary" @click="initialize">
-                            Reset
+<div class="toolList pl-0 p-0.5">
+    <v-menu left :offset-x="offset" :close-on-content-click="false" v-model="menu" transition="slide-x-transition">
+        <template v-slot:activator="{ on, attrs }">
+            <div>
+                <v-btn icon v-for="(item , index) in toolItem" class="flex" :key="index" v-on="on" v-bind="attrs"
+                    v-on:click="conditionSet(item)">
+                    <v-icon
+                        class="w-10 h-10 p-3 m-0.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer"
+                        color="white" :title="item.title">{{item.icon}}</v-icon>
+                </v-btn>
+            </div>
+        </template>
+        <v-card>
+            <v-list>
+                <v-list-item>
+                    <v-list-item-content>
+                        <toolContext :title="toolItem.title" :toolIndexFocus="toolIndexFocus"
+                            :toolTitleFocus="toolTitleFocus">
+                            <div :slot="toolItem.title"></div>
+                        </toolContext>
+                    </v-list-item-content>
+                    <v-list-item-action>
+                        <v-btn icon>
+                            <v-icon v-on:click="menu=false">mdi-close</v-icon>
                         </v-btn>
-                    </template>
-                </v-data-table>
-            </v-app>
-        </div>
+                    </v-list-item-action>
+                </v-list-item>
+            </v-list>
+            <v-divider></v-divider>
+            <v-card-text>
+                <h2 class="text-h6 mb-2">
+                    依繪製圖形查詢資訊
+                </h2>
+                <v-chip-group v-model="initFilterSet" column multiple>
+                    <v-chip filter outlined>
+                        點
+                    </v-chip>
+                    <v-chip filter outlined>
+                        線
+                    </v-chip>
+                    <v-chip filter outlined>
+                        面
+                    </v-chip>
+                    <v-chip filter outlined>
+                        矩形
+                    </v-chip>
+                </v-chip-group>
+            </v-card-text>
+
+            </v-list>
+            <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn text @click="menu = false">
+                    取消
+                </v-btn>
+                <v-btn color="primary" text @click="menu = false">
+                    確定
+                </v-btn>
+            </v-card-actions>
+        </v-card>
+    </v-menu>
+</div>
+</div>

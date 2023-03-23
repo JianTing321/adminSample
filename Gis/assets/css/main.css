@@ -1,0 +1,10 @@
+//自定義配置CSS
+@tailwind base; /*基礎樣式*/
+@tailwind components; /*模組樣式*/
+@tailwind utilities; /*共用樣式*/
+
+/* @layer utilities {
+  .content-auto {
+    content-visibility: auto;
+  }
+} */
