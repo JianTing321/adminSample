@@ -61,3 +61,139 @@
     </v-menu>
 </div>
 </div>
+
+
+
+<v-card>
+    <v-list>
+        <v-list-item>
+            <v-list-item-content>
+                <toolContext :title="toolItem.title" :toolIndexFocus="toolIndexFocus" :toolTitleFocus="toolTitleFocus">
+                    <div :slot="toolItem.title"></div>
+                </toolContext>
+            </v-list-item-content>
+            <v-list-item-action>
+                <v-btn icon>
+                    <v-icon v-on:click="menu=false">mdi-close</v-icon>
+                </v-btn>
+            </v-list-item-action>
+        </v-list-item>
+    </v-list>
+    <v-divider></v-divider>
+
+    </v-list>
+    <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn text @click="menu = false">
+            取消
+        </v-btn>
+        <v-btn color="primary" text @click="menu = false">
+            確定
+        </v-btn>
+    </v-card-actions>
+</v-card>
+
+
+<v-card>
+    <v-list>
+        <v-list-item>
+            <v-list-item-content>
+                <!-- <toolContext :title="toolItem.title" :toolIndexFocus="toolIndexFocus"
+                    :toolTitleFocus="toolTitleFocus">
+                    <div :slot="toolItem.title"></div>
+                </toolContext> -->
+                <Category title="美食">
+                    <img slot="center" src="https://s3.ax1x.com/2021/01/16/srJlq0.jpg" alt="">
+                    <a slot="footer" href="http://www.atguigu.com">更多美食</a>
+                </Category>
+
+                <Category title="游戏">
+                    <ul slot="center">
+                        <li v-for="(g,index) in games" :key="index">{{g}}</li>
+                    </ul>
+                    <div class="foot" slot="footer">
+                        <a href="http://www.atguigu.com">单机游戏</a>
+                        <a href="http://www.atguigu.com">网络游戏</a>
+                    </div>
+                </Category>
+
+                <Category title="电影">
+                    <video slot="center" controls src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+                    <template v-slot:footer>
+                        <div class="foot">
+                            <a href="http://www.atguigu.com">经典</a>
+                            <a href="http://www.atguigu.com">热门</a>
+                            <a href="http://www.atguigu.com">推荐</a>
+                        </div>
+                        <h4>欢迎前来观影</h4>
+                    </template>
+                </Category>
+            </v-list-item-content>
+            <v-list-item-action>
+                <v-btn icon>
+                    <v-icon v-on:click="menu=false">mdi-close</v-icon>
+                </v-btn>
+            </v-list-item-action>
+        </v-list-item>
+    </v-list>
+    <v-divider></v-divider>
+
+    </v-list>
+    <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn text @click="menu = false">
+            取消
+        </v-btn>
+        <v-btn color="primary" text @click="menu = false">
+            確定
+        </v-btn>
+    </v-card-actions>
+</v-card>
+
+
+
+<aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-auto h-screen" aria-label="Sidebar">
+    <div class="flex h-full overflow-y-auto" style="box-shadow:.1rem 0 0.05rem rgba(10, 34, 52, .2)">
+        <ul class="pl-0 space-y-2" style="background-color: #0a2234">
+            <li v-for="(item , index) in navItem" :key="index">
+                <button
+                    class="flex flex-col items-center p-2 text-base font-normal text-white dark:text-white hover:bg-gray-500 dark:hover:bg-gray-700"
+                    :title="item.title">
+                    <v-icon
+                        class="w-8 h-8 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+                        color="white">{{item.icon}}</v-icon>
+                    <span class="text-xs text-white">{{item.title}}</span>
+                </button>
+            </li>
+        </ul>
+
+        <div class="sidebarContent p-4 bg-gray-100 w-80">
+            <section class="title border-b-2 border-gray-200 flex justify-between items-center pb-2 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="7.832" height="14.5" viewBox="0 0 7.832 14.5">
+                    <path id="Vector_2_Stroke_" data-name="Vector 2 (Stroke)"
+                        d="M8.176.763a1,1,0,0,1,.061,1.413l-4.9,5.351,4.931,5.828a1,1,0,1,1-1.527,1.292L.668,7.474,6.763.824A1,1,0,0,1,8.176.763Z"
+                        transform="translate(-0.668 -0.5)" fill-rule="evenodd" />
+                </svg>
+                <span class="flex-1 font-semibold text-xl whitespace-nowrap pl-2">分類查詢</span>
+            </section>
+            <v-expansion-panels accordion>
+                <v-expansion-panel :active-class="activeClass" v-for="(item,i) in 5" :key="i">
+                    <v-expansion-panel-header>
+                        Item
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                    </v-expansion-panel-content>
+                </v-expansion-panel>
+            </v-expansion-panels>
+
+
+
+
+
+
+        </div>
+    </div>
+</aside>

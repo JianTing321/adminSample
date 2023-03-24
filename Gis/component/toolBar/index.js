@@ -63,7 +63,6 @@ const toolBar = Vue.extend({
     `,
   data() {
     return {
-      <!-- dialog: false, -->
       menu: false,
       toolIndexFocus: 0,
       toolTitleFocus: "",
@@ -81,19 +80,15 @@ const toolBar = Vue.extend({
         { title: "放大", icon: "mdi-plus" },
         { title: "縮小", icon: "mdi-minus" },
       ],
-      foods: ["火锅", "烧烤", "小龙虾", "牛排"],
-      games: ["红色警戒", "穿越火线", "劲舞团", "超级玛丽"],
-      films: ["《教父》", "《拆弹专家》", "《你好，李焕英》", "《尚硅谷》"],
+      
     };
   },
   methods: {
     conditionSet(item) { 
+    // 取得當前索引的標題 
       this.toolTitleFocus = item.title
-      this.toolIndexFocus = this.toolItem.indexOf(item)
-      <!-- console.log("@@@", item.title); -->
-      <!-- console.log("@@@", this.toolTitleFocus); -->
-      <!-- console.log(this.toolItem.indexOf(item)); -->
-      <!-- console.log(this.toolIndexFocus); -->
+    // 取得當前索引
+      this.toolIndexFocus = this.toolItem.indexOf(item)    
     },
   },
 });

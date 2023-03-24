@@ -37,8 +37,6 @@ const toolContext = Vue.extend({
     `,
   data() {
     return {
-      dialog: false,
-      toolInit: [],
     };
   },
   methods: {},
