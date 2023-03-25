@@ -79,8 +79,7 @@ const toolBar = Vue.extend({
         { title: "重設羅盤方向", icon: "mdi-compass" },
         { title: "放大", icon: "mdi-plus" },
         { title: "縮小", icon: "mdi-minus" },
-      ],
-      
+      ],      
     };
   },
   methods: {
@@ -90,5 +89,6 @@ const toolBar = Vue.extend({
     // 取得當前索引
       this.toolIndexFocus = this.toolItem.indexOf(item)    
     },
+
   },
 });

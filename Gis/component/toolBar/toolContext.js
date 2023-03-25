@@ -31,13 +31,12 @@ const toolContext = Vue.extend({
       <slot v-if="toolIndexFocus==3" :name="toolTitleFocus">{{toolTitleFocus}}</slot>
       <slot v-if="toolIndexFocus==4" :name="toolTitleFocus">{{toolTitleFocus}}</slot>
       <slot v-if="toolIndexFocus==5" :name="toolTitleFocus">{{toolTitleFocus}}</slot>
-      <slot v-if="toolIndexFocus==6" :name="toolTitleFocus">{{toolTitleFocus}}</slot>
+      <slot v-if="toolIndexFocus==6" :name="toolTitleFocus">{{toolTitleFocus}}</slot>  
 	</div>
 </div>
     `,
   data() {
-    return {
-    };
+    return {};
   },
   methods: {},
 });
