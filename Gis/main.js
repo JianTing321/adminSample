@@ -8,7 +8,7 @@ const mainPage = Vue.extend({
   template: `
    <div>
       <asideBar></asideBar>
-      <mapArea></mapArea>
+      <mapArea></mapArea>左側選單列更新
       <toolBar></toolBar>
    </div>
    `,
