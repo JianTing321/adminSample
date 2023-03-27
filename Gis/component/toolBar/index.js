@@ -31,9 +31,7 @@ const toolBar = Vue.extend({
               <v-list>
                   <v-list-item>
                       <v-list-item-content>
-                          <toolContext :title="toolItem.title" :toolIndexFocus="toolIndexFocus"
-                              :toolTitleFocus="toolTitleFocus">
-                              <div :slot="toolItem.title"></div>
+                          <toolContext :title="toolItem.title" :toolIndexFocus="toolIndexFocus" :toolTitleFocus="toolTitleFocus">
                           </toolContext>
                       </v-list-item-content>
                       <v-list-item-action>
@@ -43,8 +41,7 @@ const toolBar = Vue.extend({
                       </v-list-item-action>
                   </v-list-item>
               </v-list>
-              <v-divider></v-divider>
-         
+              <v-divider></v-divider>        
 
               </v-list>
               <v-card-actions>
