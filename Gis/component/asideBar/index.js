@@ -4,17 +4,17 @@ const asideBar = Vue.extend({
   template: `    
     <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-auto h-screen" aria-label="Sidebar">
         <div class="flex h-full overflow-y-auto" style="box-shadow:.1rem 0 0.05rem rgba(10, 34, 52, .2)">
-        <ul class="pl-0 space-y-2" style="background-color: #0a2234">
-            <li v-for="(item , index) in navItem" :key="index">
+        <ul class="pl-0" style="background-color: #0a2234">
+            <li v-for="(item , index) in navItem" :key="index" v-on:click="selected=item.title" :class="{'bg-sky-800':selected==item.title}">
                 <button class="flex flex-col items-center p-2 text-base font-normal text-white dark:text-white hover:bg-gray-500 dark:hover:bg-gray-700" :title="item.title">             
                     <v-icon class="w-8 h-8 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white" color="white">{{item.icon}}</v-icon>   
                     <span class="text-xs text-white">{{item.title}}</span>              
                 </button>
             </li>            
         </ul>        
-        <div class="sidebarContent p-4 bg-gray-100 w-80">
+        <div class="sidebarContent p-4 bg-gray-100 w-80" v-if="show">
             <section class="title border-b-2 border-gray-200 flex justify-between items-center pb-2 cursor-pointer">                   
-                <v-icon class="w-8 h-8 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white" color="black" large>mdi-chevron-left</v-icon>   
+                <v-icon class="w-8 h-8 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white" color="black" large @click="show=false">mdi-chevron-left</v-icon>   
                 <span class="flex-1 font-semibold text-xl whitespace-nowrap pl-2">分類查詢</span>          
             </section>
             <v-expansion-panels accordion tile>
@@ -33,6 +33,8 @@ const asideBar = Vue.extend({
     `,
   data() {
     return {
+      show:'false',
+      selected:'',
       edited: false,
       navItem: [
         { title: "搜尋結果", icon: "mdi-clipboard-list" },

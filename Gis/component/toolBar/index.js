@@ -19,9 +19,9 @@ const toolBar = Vue.extend({
       <v-menu left :offset-x="offset" :close-on-content-click="false" v-model="menu" transition="slide-x-transition">
           <template v-slot:activator="{ on, attrs }">
               <div>
-                  <v-btn icon v-for="(item , index) in toolItem" class="flex" :key="index" v-on="on" v-bind="attrs"
-                      v-on:click="conditionSet(item)">
-                      <v-icon size="130%"
+                  <v-btn icon v-for="(item , index) in toolItem" class="flex":key="index" v-on="on" v-bind="attrs"
+                      v-on:click="toolTitleFocus = item.title||conditionSet(item)" >
+                      <v-icon size="130%" :class="{'animate-pulse':toolTitleFocus==item.title}"
                           class="p-3.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer"
                           color="white" :title="item.title">{{item.icon}}</v-icon>
                   </v-btn>
@@ -76,16 +76,15 @@ const toolBar = Vue.extend({
         { title: "重設羅盤方向", icon: "mdi-compass" },
         { title: "放大", icon: "mdi-plus" },
         { title: "縮小", icon: "mdi-minus" },
-      ],      
+      ],
     };
   },
   methods: {
-    conditionSet(item) { 
-    // 取得當前索引的標題 
-      this.toolTitleFocus = item.title
-    // 取得當前索引
-      this.toolIndexFocus = this.toolItem.indexOf(item)    
-    },
-
-  },
+    conditionSet(item) {
+      // 取得當前索引
+      this.toolIndexFocus = this.toolItem.indexOf(item);
+      console.log(item);
+      // this.$refs.toolBtn[this.toolIndexFocus].$el.classList.toggle("animate-bounce")
+    }
+  }
 });
