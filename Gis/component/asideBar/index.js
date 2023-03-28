@@ -2,26 +2,26 @@ const asideBar = Vue.extend({
   name: "asideBar",
   components: {asideContext},
   template: `    
-    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-auto h-screen" aria-label="Sidebar">
-        <div class="flex h-full overflow-y-auto" style="box-shadow:.1rem 0 0.05rem rgba(10, 34, 52, .2)">
-        <ul class="pl-0" style="background-color: #0a2234">
-            <li v-for="(item , index) in navItem" :key="index" v-on:click="selected=item.title" :class="{'bg-sky-800':selected==item.title}">
-                <button class="flex flex-col items-center p-2 text-base font-normal text-white dark:text-white hover:bg-gray-500 dark:hover:bg-gray-700" :title="item.title" v-on:click="this.show=true">             
+  <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-auto h-screen" aria-label="Sidebar">
+      <div class="flex h-full overflow-y-auto shadow-[0.1rem_0_0.05rem_rgba(10,34,52,0.2)]">
+        <ul class="pl-0 bg-[#0a2234] z-30 h-full w-auto">
+            <li v-for="(item , index) in navItem" :key="index" v-on:click="asideClick(item)" :class="{'bg-sky-800':selected==item.title}">
+                <button class="flex flex-col items-center p-2 text-base font-normal text-white dark:text-white hover:bg-gray-500 dark:hover:bg-gray-700" :title="item.title">             
                     <v-icon class="w-8 h-8 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white" color="white">{{item.icon}}</v-icon>   
                     <span class="text-xs text-white">{{item.title}}</span>              
                 </button>
             </li>            
         </ul>
-        <asideContext :selected="selected" :showList="showList">
-          <template v-slot:[dynamic_slot_name] >
+        <asideContext :selected="selected" :showList="showList" @list-Off="asideBarListOff">
+          <template v-slot:[dynamic_slot_name]>
           </template>
-        </asideContext>        
-        </div>
-    </aside>    
+        </asideContext>
+      </div>
+  </aside>    
     `,
   data() {
     return {
-      showList:'false',
+      showList:true,
       selected:`分類查詢`,
       edited: false,
       navItem: [
@@ -30,14 +30,19 @@ const asideBar = Vue.extend({
         { title: "分類查詢", icon: "mdi-filter" },
         { title: "使用分區", icon: "mdi-open-in-new" },
         { title: "圖資申領", icon: "mdi-image-multiple" },
-      ],
-      listArr: [
-        { title: "都市計畫" },
-        { title: "都市設計開發" },
-        { title: "都市更新" },
-        { title: "建築管理" },
-      ],
+      ],     
     };
+  },
+  methods:{   
+    // 側邊欄(灰色ContentBox使用'<'打開)
+    asideBarListOff(off) {
+      return this.showList = off
+    },    
+    // 側邊按鈕切換個別內容
+    asideClick(item){
+      this.selected=item.title;
+      this.showList=true
+    }
   },
   computed: {
     activeClass() {

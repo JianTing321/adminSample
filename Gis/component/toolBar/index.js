@@ -20,8 +20,8 @@ const toolBar = Vue.extend({
           <template v-slot:activator="{ on, attrs }">
               <div>
                   <v-btn icon v-for="(item , index) in toolItem" class="flex":key="index" v-on="on" v-bind="attrs"
-                      v-on:click="toolTitleFocus = item.title||conditionSet(item)" >
-                      <v-icon size="130%" :class="{'animate-pulse':toolTitleFocus==item.title}"
+                      v-on:click="getToolItem = item||conditionSet(item)">
+                      <v-icon size="130%" :class="{'animate-pulse':getToolItem.title==item.title}"
                           class="p-3.5 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer"
                           color="white" :title="item.title">{{item.icon}}</v-icon>
                   </v-btn>
@@ -31,7 +31,7 @@ const toolBar = Vue.extend({
               <v-list>
                   <v-list-item>
                       <v-list-item-content>
-                          <toolContext :title="toolItem.title" :toolIndexFocus="toolIndexFocus" :toolTitleFocus="toolTitleFocus">
+                          <toolContext :getToolItem="getToolItem">
                           </toolContext>
                       </v-list-item-content>
                       <v-list-item-action>
@@ -62,21 +62,9 @@ const toolBar = Vue.extend({
     return {
       menu: false,
       toolIndexFocus: 0,
+      getToolItem:"",
       toolTitleFocus: "",
       offset: true,
-      toolItem: [
-        { title: "圖層套疊", icon: "mdi-layers" },
-        { title: "查詢工具", icon: "mdi-information-variant" },
-        { title: "尺標", icon: "mdi-ruler" },
-        { title: "清除標記", icon: "mdi-eraser" },
-        { title: "街景", icon: "mdi-google-street-view" },
-        { title: "列印", icon: "mdi-printer" },
-        { title: "定位", icon: "mdi-map-marker" },
-        { title: "返回", icon: "mdi-keyboard-return" },
-        { title: "重設羅盤方向", icon: "mdi-compass" },
-        { title: "放大", icon: "mdi-plus" },
-        { title: "縮小", icon: "mdi-minus" },
-      ],
     };
   },
   methods: {
@@ -85,6 +73,10 @@ const toolBar = Vue.extend({
       this.toolIndexFocus = this.toolItem.indexOf(item);
       console.log(item);
       // this.$refs.toolBtn[this.toolIndexFocus].$el.classList.toggle("animate-bounce")
-    }
-  }
+    }   
+  },
+  computed: {
+    //掛載工具箱的icon
+    ...Pinia.mapState(useToolBar, ['toolItem'])
+  } 
 });

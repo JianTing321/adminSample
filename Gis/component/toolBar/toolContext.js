@@ -1,17 +1,16 @@
 const toolContext = Vue.extend({
   name: "toolContext",
   components: {},
-  props: ["title", "toolIndexFocus", "toolTitleFocus"],
+  props: ["getToolItem"],
   template: `  
 <div> 
     <div class="toolContext">   
-      <slot name="header">{{toolTitleFocus}}      
-             
+      <slot name="header">{{getToolItem.title}}              
       </slot>
       <slot name="body">
         <v-card-text>
                 <div>
-                    依繪製圖形查詢資訊
+                {{getToolItem.description}}
                 </div>
                 <v-chip-group column multiple>
                     <v-chip filter outlined>
