@@ -11,9 +11,9 @@ const toolBar = Vue.extend({
       <v-menu left :offset-x="offset" :close-on-content-click="false" v-model="menu" transition="slide-x-transition">
           <template v-slot:activator="{ on, attrs }">
               <div>
-                  <v-btn icon v-for="(item , index) in toolItem" class="flex my-1" :key="index" v-on="on" v-bind="attrs"
-                      v-on:click="getToolItem = item||conditionSet(item)">
-                      <v-icon small :class="{'animate-pulse':getToolItem.title==item.title}"class="p-4 rounded-lg bg-gray-800 border-[#243c5a] border-y-2 hover:bg-gray-500 cursor-pointer"color="white" :title="item.title">
+                  <v-btn icon v-for="(item , index) in toolItem" class="flex my-1 " :key="index" v-on="on" v-bind="attrs"
+                      v-on:click="conditionSet(item) ">
+                      <v-icon small :class="{'animate-pulse':getToolItem.title==item.title}" class="p-4 rounded-lg bg-gray-800 border-[#2a476b] border-y-2 hover:bg-gray-500 cursor-pointer bg-gradient-to-t from-gray-800 from-10% via-gray-600 via-50% to-gray-800 to-90% hover:from-gray-00 hover:via-gray-800 hover:to-gray-800" color="white" :title="item.title">
                       {{item.icon}}</v-icon>
                   </v-btn>
               </div>
@@ -51,6 +51,8 @@ const toolBar = Vue.extend({
     `,
   data() {
     return {
+      color:'white',
+      colorFor:'yellow',
       menu: false,
       toolIndexFocus: 0,
       getToolItem:"",
@@ -60,14 +62,16 @@ const toolBar = Vue.extend({
   },
   methods: {
     conditionSet(item) {
+      this.getToolItem = item
       // 取得當前索引
       this.toolIndexFocus = this.toolItem.indexOf(item);
       console.log(item);
+
       // this.$refs.toolBtn[this.toolIndexFocus].$el.classList.toggle("animate-bounce")
     }   
   },
   computed: {
     //掛載工具箱的icon
     ...Pinia.mapState(useToolBar, ['toolItem'])
-  } 
+  }  
 });
