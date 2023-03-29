@@ -1,7 +1,7 @@
 const asideContext = Vue.extend({
   name: "asideContext",
   components: {},
-  props:['selected','showList',],
+  props:['selected','showList'],
   template: `
   <Transition duration="550" name="slide-fade">
     <div class="sidebarContent p-4 bg-gray-100 w-80" v-if="showList">

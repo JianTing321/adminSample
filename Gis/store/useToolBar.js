@@ -70,7 +70,7 @@ const useToolBar = Pinia.defineStore('tools', {
           id: "googleStreetViewSimple",
           icon: "mdi-google-street-view",
           title: "街景",
-          description: "顯示 GoogleMap 街景\n點擊您想顯示街景的位置",
+          description: "顯示GoogleMap街景點擊您想顯示街景的位置",
       },
       {
           id: "printer",

@@ -6,9 +6,9 @@ const asideBar = Vue.extend({
       <div class="flex h-full overflow-y-auto shadow-[0.1rem_0_0.05rem_rgba(10,34,52,0.2)]">
         <ul class="pl-0 bg-[#0a2234] z-30 h-full w-auto">
             <li v-for="(item , index) in navItem" :key="index" v-on:click="asideClick(item)" :class="{'bg-sky-800':selected==item.title}">
-                <button class="flex flex-col items-center p-2 text-base font-normal text-white dark:text-white hover:bg-gray-500 dark:hover:bg-gray-700" :title="item.title">             
-                    <v-icon class="w-8 h-8 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white" color="white">{{item.icon}}</v-icon>   
-                    <span class="text-xs text-white">{{item.title}}</span>              
+                <button class="flex flex-col items-center p-3 text-base font-normal text-white dark:text-white hover:bg-gray-500 dark:hover:bg-gray-700" :title="item.title">             
+                    <v-icon large class="pb-0.5 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white" color="white">{{item.icon}}</v-icon>   
+                    <span class="text-xs text-white text-lg">{{item.title}}</span>              
                 </button>
             </li>            
         </ul>
@@ -23,7 +23,6 @@ const asideBar = Vue.extend({
     return {
       showList:true,
       selected:`分類查詢`,
-      edited: false,
       navItem: [
         { title: "搜尋結果", icon: "mdi-clipboard-list" },
         { title: "定位查詢", icon: "mdi-map-search" },
@@ -43,10 +42,5 @@ const asideBar = Vue.extend({
       this.selected=item.title;
       this.showList=true
     }
-  },
-  computed: {
-    activeClass() {
-      return this.edited ? "grey lighten-4" : "grey lighten-3";
-    },
-  },
+  }, 
 });

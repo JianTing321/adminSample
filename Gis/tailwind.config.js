@@ -4,7 +4,7 @@ tailwind.config = {
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
     },
-    extend: {
+    extend: {     
       spacing: {
         "8xl": "96rem",
         "9xl": "128rem",

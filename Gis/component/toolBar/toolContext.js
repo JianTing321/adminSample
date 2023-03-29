@@ -35,4 +35,6 @@ const toolContext = Vue.extend({
     return {};
   },
   methods: {},
+  computed:{
+  }
 });
